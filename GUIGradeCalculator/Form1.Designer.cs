@@ -154,9 +154,11 @@
             // 
             // DisplayResultsLbl
             // 
+            DisplayResultsLbl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            DisplayResultsLbl.BackColor = Color.Tan;
             DisplayResultsLbl.Location = new Point(219, 343);
             DisplayResultsLbl.Name = "DisplayResultsLbl";
-            DisplayResultsLbl.Size = new Size(169, 82);
+            DisplayResultsLbl.Size = new Size(134, 61);
             DisplayResultsLbl.TabIndex = 13;
             // 
             // ClearBtn
