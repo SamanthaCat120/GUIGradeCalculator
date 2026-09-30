@@ -182,7 +182,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(600, 422);
             Controls.Add(LblListBox);
             Controls.Add(ClearBtn);
             Controls.Add(DisplayResultsLbl);
@@ -198,6 +198,7 @@
             Controls.Add(TxtBxName);
             Controls.Add(LblName);
             Controls.Add(LblTitle);
+            MinimumSize = new Size(616, 461);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
