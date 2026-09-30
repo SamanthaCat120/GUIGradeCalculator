@@ -1,5 +1,5 @@
 # Student Grade Calculator 
-A Windows Forms application that accepts grades, validates input, calculates an average, and determines a letter grade.
+A Windows Forms application that accepts grades, validates input, calculates an average, and determines a letter grade. This was first a console application that was converted to a Windows Forms application.
 
 ## Application Screenshots
 
