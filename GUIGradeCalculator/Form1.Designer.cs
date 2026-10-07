@@ -202,7 +202,7 @@
             Controls.Add(LblTitle);
             MinimumSize = new Size(616, 461);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Grade Calculator";
             ResumeLayout(false);
             PerformLayout();
         }
