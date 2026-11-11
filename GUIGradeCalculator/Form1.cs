@@ -8,6 +8,7 @@ namespace GUIGradeCalculator
         public Form1()
         {
             InitializeComponent();
+            CmbBxStudentType.SelectedIndex = 0;
         }
 
         private void AddGradeBtn_Click(object sender, EventArgs e)
@@ -73,7 +74,7 @@ namespace GUIGradeCalculator
                 return;
             }
 
-            if(currentStudent.Grades.Count == 0)
+            if (currentStudent.Grades.Count == 0)
             {
                 LblStatus.Text = "Enter at least one grade.";
                 return;
@@ -98,7 +99,7 @@ namespace GUIGradeCalculator
             LblStatus.Text = "";
 
         }
-        
+
 
         private void DisplayResults(string studentName, double overallAverage, string letterGrade, string studentStatus)
         {
@@ -121,10 +122,32 @@ namespace GUIGradeCalculator
             currentStudent.Grades.Clear();
             currentStudent.StudentName = "";
 
+            CmbBxStudentType.SelectedIndex = 0;
+
             LstBxGrades.DataSource = null;
 
             LblStatus.Text = "";
             DisplayResultsLbl.Text = "";
+        }
+
+        private void CmbBxStudentType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Save student's information
+            string studentName = currentStudent.StudentName;
+            List<int> grades = currentStudent.Grades;
+
+            // Create the selected student type
+            if (CmbBxStudentType.SelectedIndex == 1)
+            {
+                currentStudent = new HonorsStudent(studentName);
+            }
+            else
+            {
+                currentStudent = new StandardStudent(studentName);
+            }
+
+            // Preserve the existing grades
+            currentStudent.Grades = grades;
         }
     }
 }

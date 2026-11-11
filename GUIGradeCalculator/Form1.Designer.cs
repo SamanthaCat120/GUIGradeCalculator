@@ -43,6 +43,8 @@
             DisplayResultsLbl = new Label();
             ClearBtn = new Button();
             LblListBox = new Label();
+            label1 = new Label();
+            CmbBxStudentType = new ComboBox();
             SuspendLayout();
             // 
             // LblTitle
@@ -74,7 +76,7 @@
             // LblGrade
             // 
             LblGrade.AutoSize = true;
-            LblGrade.Location = new Point(98, 104);
+            LblGrade.Location = new Point(98, 159);
             LblGrade.Name = "LblGrade";
             LblGrade.Size = new Size(76, 15);
             LblGrade.TabIndex = 3;
@@ -82,7 +84,7 @@
             // 
             // TxtBxGrade
             // 
-            TxtBxGrade.Location = new Point(208, 101);
+            TxtBxGrade.Location = new Point(210, 159);
             TxtBxGrade.Name = "TxtBxGrade";
             TxtBxGrade.Size = new Size(100, 23);
             TxtBxGrade.TabIndex = 4;
@@ -90,15 +92,15 @@
             // LstBxGrades
             // 
             LstBxGrades.FormattingEnabled = true;
-            LstBxGrades.Location = new Point(118, 187);
+            LstBxGrades.Location = new Point(98, 239);
             LstBxGrades.Name = "LstBxGrades";
-            LstBxGrades.Size = new Size(180, 94);
+            LstBxGrades.Size = new Size(180, 109);
             LstBxGrades.TabIndex = 6;
             LstBxGrades.DoubleClick += LstBxGrades_DoubleClick;
             // 
             // AddGradeBtn
             // 
-            AddGradeBtn.Location = new Point(347, 104);
+            AddGradeBtn.Location = new Point(333, 159);
             AddGradeBtn.Name = "AddGradeBtn";
             AddGradeBtn.Size = new Size(75, 23);
             AddGradeBtn.TabIndex = 5;
@@ -108,7 +110,7 @@
             // 
             // CalcBtn
             // 
-            CalcBtn.Location = new Point(118, 296);
+            CalcBtn.Location = new Point(118, 354);
             CalcBtn.Name = "CalcBtn";
             CalcBtn.Size = new Size(113, 23);
             CalcBtn.TabIndex = 7;
@@ -119,7 +121,7 @@
             // LblResults
             // 
             LblResults.AutoSize = true;
-            LblResults.Location = new Point(137, 343);
+            LblResults.Location = new Point(137, 393);
             LblResults.Name = "LblResults";
             LblResults.Size = new Size(47, 15);
             LblResults.TabIndex = 9;
@@ -138,7 +140,7 @@
             // LblRemoveInstructions
             // 
             LblRemoveInstructions.AutoSize = true;
-            LblRemoveInstructions.Location = new Point(304, 205);
+            LblRemoveInstructions.Location = new Point(304, 239);
             LblRemoveInstructions.Name = "LblRemoveInstructions";
             LblRemoveInstructions.Size = new Size(295, 15);
             LblRemoveInstructions.TabIndex = 11;
@@ -156,9 +158,9 @@
             // 
             DisplayResultsLbl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             DisplayResultsLbl.BackColor = Color.Tan;
-            DisplayResultsLbl.Location = new Point(219, 343);
+            DisplayResultsLbl.Location = new Point(210, 393);
             DisplayResultsLbl.Name = "DisplayResultsLbl";
-            DisplayResultsLbl.Size = new Size(134, 61);
+            DisplayResultsLbl.Size = new Size(134, 86);
             DisplayResultsLbl.TabIndex = 13;
             // 
             // ClearBtn
@@ -174,17 +176,39 @@
             // LblListBox
             // 
             LblListBox.AutoSize = true;
-            LblListBox.Location = new Point(103, 159);
+            LblListBox.Location = new Point(98, 206);
             LblListBox.Name = "LblListBox";
             LblListBox.Size = new Size(86, 15);
             LblListBox.TabIndex = 15;
             LblListBox.Text = "Entered Grades";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(98, 107);
+            label1.Name = "label1";
+            label1.Size = new Size(86, 15);
+            label1.TabIndex = 16;
+            label1.Text = "Student Status:";
+            // 
+            // CmbBxStudentType
+            // 
+            CmbBxStudentType.DropDownStyle = ComboBoxStyle.DropDownList;
+            CmbBxStudentType.FormattingEnabled = true;
+            CmbBxStudentType.Items.AddRange(new object[] { "Standard Student", "Honors Student" });
+            CmbBxStudentType.Location = new Point(208, 107);
+            CmbBxStudentType.Name = "CmbBxStudentType";
+            CmbBxStudentType.Size = new Size(121, 23);
+            CmbBxStudentType.TabIndex = 17;
+            CmbBxStudentType.SelectedIndexChanged += CmbBxStudentType_SelectedIndexChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(600, 422);
+            ClientSize = new Size(600, 488);
+            Controls.Add(CmbBxStudentType);
+            Controls.Add(label1);
             Controls.Add(LblListBox);
             Controls.Add(ClearBtn);
             Controls.Add(DisplayResultsLbl);
@@ -224,5 +248,7 @@
         private Label DisplayResultsLbl;
         private Button ClearBtn;
         private Label LblListBox;
+        private Label label1;
+        private ComboBox CmbBxStudentType;
     }
 }
