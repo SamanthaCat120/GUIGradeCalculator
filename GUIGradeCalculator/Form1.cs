@@ -2,8 +2,8 @@ namespace GUIGradeCalculator
 {
     public partial class Form1 : Form
     {
-        //variables
-        List<int> myGrades = new List<int>();
+        //Student object
+        private Student currentStudent = new StandardStudent("");
         public Form1()
         {
             InitializeComponent();
@@ -21,10 +21,10 @@ namespace GUIGradeCalculator
                 {
                     //add grade
 
-                    myGrades.Add(grade);
+                    currentStudent.AddGrade(grade);
 
                     LstBxGrades.DataSource = null;
-                    LstBxGrades.DataSource = myGrades;
+                    LstBxGrades.DataSource = currentStudent.Grades;
 
                     LblStatus.Text = "";
                     TxtBxGrade.Clear();
@@ -55,15 +55,16 @@ namespace GUIGradeCalculator
 
             //remove grade
 
-            myGrades.RemoveAt(LstBxGrades.SelectedIndex);
+            currentStudent.RemoveGrade(LstBxGrades.SelectedIndex);
 
             LstBxGrades.DataSource = null;
-            LstBxGrades.DataSource = myGrades;
+            LstBxGrades.DataSource = currentStudent.Grades;
         }
 
         private void CalcBtn_Click(object sender, EventArgs e)
         {
             string studentName = TxtBxName.Text;
+            currentStudent.StudentName = studentName;
 
             if (string.IsNullOrWhiteSpace(studentName))
             {
@@ -71,7 +72,7 @@ namespace GUIGradeCalculator
                 return;
             }
 
-            if(myGrades.Count == 0)
+            if(currentStudent.Grades.Count == 0)
             {
                 LblStatus.Text = "Enter at least one grade.";
                 return;
@@ -83,7 +84,7 @@ namespace GUIGradeCalculator
 
             //calculate average
 
-            overallAverage = CalculateAverage(myGrades);
+            overallAverage = CalculateAverage(currentStudent.Grades);
 
 
             //determine letter grade
@@ -152,7 +153,8 @@ namespace GUIGradeCalculator
             TxtBxName.Clear();
             TxtBxGrade.Clear();
 
-            myGrades.Clear();
+            currentStudent.Grades.Clear();
+            currentStudent.StudentName = "";
 
             LstBxGrades.DataSource = null;
 

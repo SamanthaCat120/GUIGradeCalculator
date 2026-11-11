@@ -20,7 +20,7 @@ namespace GUIGradeCalculator
         //Add a grade to the student's list of grades
         public void AddGrade(int grade)
         {
-            if (index >= 0 && index < Grades.Count)
+            if (grade >= 0 && grade <= 100)
             {
                 Grades.Add(grade);
             }
