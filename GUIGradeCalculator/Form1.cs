@@ -4,6 +4,7 @@ namespace GUIGradeCalculator
     {
         //Student object
         private Student currentStudent = new StandardStudent("");
+        private GradeCalculator gradeCalculator = new GradeCalculator();
         public Form1()
         {
             InitializeComponent();
@@ -84,61 +85,25 @@ namespace GUIGradeCalculator
 
             //calculate average
 
-            overallAverage = CalculateAverage(currentStudent.Grades);
+            overallAverage = currentStudent.CalculateAverage();
 
 
             //determine letter grade
 
-            letterGrade = DetermineLetter(overallAverage);
+            letterGrade = gradeCalculator.DetermineLetter(overallAverage);
 
             //display results
 
-            DisplayResults(studentName, overallAverage, letterGrade);
+            DisplayResults(studentName, overallAverage, letterGrade, currentStudent.GetStudentStatus());
             LblStatus.Text = "";
 
         }
-        static double CalculateAverage(List<int> grades)
-        {
-            int gradeTotal = 0;
+        
 
-            foreach (int grade in grades)
-            {
-                gradeTotal += grade;
-            }
-
-            double overallAverage = (double)gradeTotal / grades.Count;
-            return overallAverage;
-        }
-        static string DetermineLetter(double overallAverage)
-        {
-            string letterGrade;
-
-            if (overallAverage >= 90)
-            {
-                letterGrade = "A";
-            }
-
-            else if (overallAverage >= 80)
-            {
-                letterGrade = "B";
-            }
-            else if (overallAverage >= 70)
-            {
-                letterGrade = "C";
-            }
-            else if (overallAverage >= 60)
-            {
-                letterGrade = "D";
-
-            }
-            else letterGrade = "F";
-            return letterGrade;
-
-        }
-
-        private void DisplayResults(string studentName, double overallAverage, string letterGrade)
+        private void DisplayResults(string studentName, double overallAverage, string letterGrade, string studentStatus)
         {
             DisplayResultsLbl.Text = "Student: " + studentName +
+                                     "\nStatus: " + studentStatus +
                                      "\nAverage: " + overallAverage.ToString("F2") +
                                      "\nLetter Grade: " + letterGrade;
         }
