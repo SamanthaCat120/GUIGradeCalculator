@@ -146,8 +146,11 @@ namespace GUIGradeCalculator
                 currentStudent = new StandardStudent(studentName);
             }
 
-            // Preserve the existing grades
-            currentStudent.Grades = grades;
+            // Transfer the grades to the new student object
+            foreach (int grade in grades)
+            {
+                currentStudent.AddGrade(grade);
+            }
         }
     }
 }

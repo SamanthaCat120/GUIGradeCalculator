@@ -8,7 +8,7 @@ namespace GUIGradeCalculator
     {
         //Properties
         public string StudentName { get; set; }
-        public List<int> Grades { get; set; }
+        public List<int> Grades { get; private set; }
 
         //Constructor
         public Student(string studentName)
