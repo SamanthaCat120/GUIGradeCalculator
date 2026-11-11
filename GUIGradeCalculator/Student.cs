@@ -35,21 +35,6 @@ namespace GUIGradeCalculator
             }
         }
 
-        //Calculate the average of the student's grades
-        public double CalculateAverage()
-        {
-            if (Grades.Count == 0)
-            {
-                return 0;
-            }
-            int gradeTotal = 0;
-            foreach (int grade in Grades)
-            {
-                gradeTotal += grade;
-            }
-            return (double)gradeTotal / Grades.Count;
-        }
-
         //Method that derived classes can override
         public virtual string GetStudentStatus()
         {

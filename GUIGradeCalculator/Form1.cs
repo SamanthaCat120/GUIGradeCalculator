@@ -86,7 +86,7 @@ namespace GUIGradeCalculator
 
             //calculate average
 
-            overallAverage = currentStudent.CalculateAverage();
+            overallAverage = gradeCalculator.CalculateAverage(currentStudent.Grades);
 
 
             //determine letter grade

@@ -6,8 +6,25 @@ namespace GUIGradeCalculator
 {
     public class GradeCalculator
     {
-        //Determine the letter grade based on the average
-        public string DetermineLetter(double overallAverage)
+        //Calculate the average of student's entered grades
+
+        public double CalculateAverage(List<int> grades)
+        {
+            if (grades.Count == 0)
+            {
+                return 0;
+            }
+
+            int gradeTotal = 0;
+
+            foreach (int grade in grades)
+            {
+                gradeTotal += grade;
+            }
+            return (double) gradeTotal / grades.Count;
+        }
+//Determine the letter grade based on the average
+public string DetermineLetter(double overallAverage)
         {
             string letterGrade;
             if (overallAverage >= 90)
