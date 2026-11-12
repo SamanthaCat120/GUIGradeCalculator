@@ -14,10 +14,10 @@ Note: Honors Student and Standard Student currently calculate grades the same wa
 ## Class Structure and Object-Oriented Programming
 The application uses four classes to separate student information, grade management, and calculations.
 
--**Student:** The base class that stores the student's name and grades and provides methods for adding and removing grades. It also defines the virtual GetStudentStatus() method.
--**StandardStudent:** Inherits from Student and overrides GetStudentStatus() to reutrn "Standard Student."
--**HonorsStudent:** Inherits from Student and overrides GetStudentStatus() to return "Honors Student."
--**GradeCalculator:** Contains methods for calculating the average and determining the letter grade.
+- **Student:** The base class that stores the student's name and grades and provides methods for adding and removing grades. It also defines the virtual GetStudentStatus() method.
+- **StandardStudent:** Inherits from Student and overrides GetStudentStatus() to reutrn "Standard Student."
+- **HonorsStudent:** Inherits from Student and overrides GetStudentStatus() to return "Honors Student."
+- **GradeCalculator:** Contains methods for calculating the average and determining the letter grade.
 
 The application demonstrates encapsulation by using properties and methods to manage student information, inheritence by allowing StandardStudent and HonorsStudent to reuse memberes of Student, and polymorphism by using the overridden GetStudentStatus() method to display the selected student type.
 
